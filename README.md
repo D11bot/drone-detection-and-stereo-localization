@@ -20,6 +20,8 @@ I built a Python workflow to detect a small drone in stereo camera images and es
 
 This repository contains the code I wrote for a team project during my MSc studies in Image Analysis and Machine Learning at Uppsala University.
 
+Flight01 is a stereo recording our team captured for this project: two cameras filmed a fast-moving DJI drone against complex outdoor backgrounds, so that detection and localization could be tested under realistic conditions. The drone's DJI flight telemetry serves as the position reference.
+
 My work covered:
 
 - Preparing Anti-UAV300 training data and fine-tuning YOLO26s for drone detection.
