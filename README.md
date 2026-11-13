@@ -83,7 +83,9 @@ I converted the observations to camera rays and triangulated a 3D position. Esti
 I evaluated detection and localization on Flight01, a separate recording from the Anti-UAV300 training data.
 
 ### Detection on held-out validation images
-These results were obtained with the Anti-UAV300-trained detector using combined full-frame and tiled inference (full_merged in the original evaluation). Localization in this code uses the tiled_merged detections.
+
+These results were obtained with the Anti-UAV300-trained detector using combined full-frame and tiled inference (`full_merged` in the original evaluation). Localization in this code uses the `tiled_merged` detections.
+
 | Metric | Result |
 | --- | ---: |
 | Stereo image pairs | 41 |
@@ -123,7 +125,7 @@ The buffer interval is excluded from fitting and evaluation.
 
 - Additional fine-tuning on Flight01 backgrounds increased false positives on validation. I kept the Anti-UAV300-trained detector.
 - The localization pipeline rejects pairs with missing detections, unavailable time-aligned observations, or failed geometry checks.
-- Valid-estimate coverage decreased from 80.5% on validation to 50.0% in the later test interval. The localization script already records diagnostic counts and rejection-status breakdowns for each data split in run_summary.json. The next step is to analyze the original Flight01 results to identify which failure modes contributed most to the decrease in coverage.
+- Valid-estimate coverage decreased from 80.5% on validation to 50.0% in the later test interval. The localization script already records diagnostic counts and rejection-status breakdowns for each data split in `run_summary.json`. The next step is to analyze the original Flight01 results to identify which failure modes contributed most to the decrease in coverage.
 
 ## Repository structure
 
@@ -186,7 +188,7 @@ The Anti-UAV300 test subset is an internal whole-video split. Flight01 uses the 
 
 ### Run detection on exported stereo images
 
-Set the left/right JPEG folders, their `frames.csv` manifests, and a trained YOLO checkpoint in `examples/detection_config.example.json`:
+Set `export_zip` and `weights` in `examples/detection_config.example.json` to your stereo-frame export ZIP and trained YOLO checkpoint. The example uses CPU inference. To use already-extracted images instead, set `export_zip` to `null` and add the `left_csv`, `right_csv`, `left_images`, and `right_images` keys with the corresponding manifest and image-directory paths:
 
 ```bash
 python flight01_detection.py --config examples/detection_config.example.json
