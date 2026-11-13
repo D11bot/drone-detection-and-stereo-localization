@@ -1,0 +1,30 @@
+# I keep generated experiments and local source data outside version control.
+anti_uav_work/
+synthetic_flight01/
+outputs/
+runs/
+data/
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.idea/
+*.py[cod]
+
+# I do not commit camera recordings, logs, trained weights, or result archives.
+*.mp4
+*.mov
+*.MOV
+*.bag
+*.srt
+*.pt
+*.zip
+*.tar.gz
+*.7z
+extractedVideoMetadata.txt
+frames.csv
+predictions_*.csv
+gps_localization.csv
+camera_parameters.json
+time_alignment.json
+run_summary.json
+

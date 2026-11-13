@@ -1,0 +1,12 @@
+{
+  "export_zip": "PATH_TO_STEREO_FRAME_EXPORT.zip",
+  "weights": "PATH_TO_TRAINED_MODEL.pt",
+  "input_root": ".",
+  "output_root": "outputs",
+  "device": "cpu",
+  "require_gpu": false,
+  "frame_step": 30,
+  "conf": 0.25,
+  "preview_pairs": 4
+}
+

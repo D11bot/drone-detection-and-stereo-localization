@@ -1,0 +1,8 @@
+ultralytics==8.4.166
+huggingface_hub>=1.3,<2.0
+numpy>=1.26,<3.0
+scipy>=1.12,<2.0
+opencv-python>=4.8,<5.0
+matplotlib>=3.8,<4.0
+PyYAML>=6.0,<7.0
+
