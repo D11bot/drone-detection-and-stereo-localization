@@ -83,7 +83,7 @@ I converted the observations to camera rays and triangulated a 3D position. Esti
 I evaluated detection and localization on Flight01, a separate recording from the Anti-UAV300 training data.
 
 ### Detection on held-out validation images
-
+These results were obtained with the Anti-UAV300-trained detector using combined full-frame and tiled inference (full_merged in the original evaluation). Localization in this code uses the tiled_merged detections.
 | Metric | Result |
 | --- | ---: |
 | Stereo image pairs | 41 |
@@ -123,7 +123,7 @@ The buffer interval is excluded from fitting and evaluation.
 
 - Additional fine-tuning on Flight01 backgrounds increased false positives on validation. I kept the Anti-UAV300-trained detector.
 - The localization pipeline rejects pairs with missing detections, unavailable time-aligned observations, or failed geometry checks.
-- Valid-estimate coverage decreased from 80.5% on validation to 50.0% in the later test interval. A per-stage count of rejected pairs is the next step in analyzing this decrease.
+- Valid-estimate coverage decreased from 80.5% on validation to 50.0% in the later test interval. The localization script already records diagnostic counts and rejection-status breakdowns for each data split in run_summary.json. The next step is to analyze the original Flight01 results to identify which failure modes contributed most to the decrease in coverage.
 
 ## Repository structure
 
